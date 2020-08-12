@@ -82,6 +82,124 @@
       </div>
     </div>
 
-    <script></script>
+    <script>
+      const word = document.getElementById("word");
+      const text = document.getElementById("text");
+      const score = document.getElementById("score");
+      const time = document.getElementById("time");
+      const end = document.getElementById("end");
+      const difficultySelect = document.getElementById("difficulty");
+      const settingsForm = document.getElementById("settings-form");
+      const settings = document.getElementById("settings");
+
+      const words = [
+        "sigh",
+        "tense",
+        "airplane",
+        "ball",
+        "pies",
+        "juice",
+        "warlike",
+        "bad",
+        "north",
+        "dependent",
+        "steer",
+        "silver",
+        "highfalutin",
+        "superficial",
+        "quince",
+        "eight",
+        "feeble",
+        "admit",
+        "drag",
+        "loving",
+      ];
+
+      let randomWord;
+      let initialScore = 0;
+      let initialTime = 7;
+      let difficulty =
+        localStorage.getItem("difficulty") !== null
+          ? localStorage.getItem("difficulty")
+          : "medium";
+
+      difficultySelect.value =
+        localStorage.getItem("difficulty") !== null
+          ? localStorage.getItem("difficulty")
+          : "medium";
+
+      //generate random word
+      function getRandomWord() {
+        return words[Math.floor(Math.random() * words.length)];
+      }
+      //   console.log(getRandomWord());
+
+      //Add word to DOM
+      function addWordToDom() {
+        randomWord = getRandomWord();
+        word.innerHTML = randomWord;
+      }
+      addWordToDom();
+
+      //event listener
+      text.addEventListener("input", (e) => {
+        const enteredInput = e.target.value;
+        // console.log(enteredInput);
+
+        if (enteredInput === randomWord) {
+          addWordToDom();
+
+          //clear
+          e.target.value = "";
+
+          //*****************do this at the last ,,jump to initialscore++
+
+          if (difficulty === "hard") {
+            initialTime += 2;
+          } else if (difficulty === "medium") {
+            initialTime += 5;
+          } else {
+            initialTime += 7;
+          }
+
+          updateTime();
+
+          //score updating
+          initialScore++;
+          score.innerHTML = initialScore;
+        }
+      });
+
+      //cursor to come automatically to input tag
+      text.focus();
+
+      //start counting down
+      const timeLeft = setInterval(updateTime, 1000);
+
+      function updateTime() {
+        // console.log(1);
+        initialTime--;
+        time.innerHTML = initialTime + " " + "sec";
+
+        if (initialTime === 0) {
+          clearInterval(timeLeft);
+          //game over
+          gameOver();
+        }
+      }
+
+      function gameOver() {
+        end.innerHTML = `<h1>Time's Up</h1>
+            <p>Your final score is ${initialScore}</p>
+            <button onClick="location.reload()">Play Again</button>`;
+      }
+
+      //difficulty
+
+      settingsForm.addEventListener("change", (e) => {
+        difficulty = e.target.value;
+        localStorage.setItem("difficulty", difficulty);
+      });
+    </script>
   </body>
 </html>
