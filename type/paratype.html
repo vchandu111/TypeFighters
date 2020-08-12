@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="parastyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>Typing Speed</title>
+  </head>
+  <body>
+    <div></div>
+    <div id="parentDiv">
+      <div>
+        <select id="select">
+          <option value="Easy" id="easy">Easy</option>
+          <option value="Medium" id="medium">Medium</option>
+          <option value="Hard" id="hard">Hard</option>
+        </select>
+      </div>
+      <div class="speedTimer" id="speedTimer">35</div>
+      <div class="textContainer">
+        <div class="paraDisplay" id="paraDisplay"></div>
+        <textarea id="userResponse" class="userResponse" autofocus>
+        USER RESPONSE</textarea
+        >
+        <div id="finalResult"></div>
+        <button id="btn">Start</button>
+      </div>
+    </div>
+
+    <script src="paraType.js"></script>
+  </body>
+</html>
