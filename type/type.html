@@ -28,9 +28,9 @@
       src="https://kit.fontawesome.com/683b4b40e3.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
-    <title>Document</title>
+    <title>Words Game</title>
   </head>
 
   <body>
@@ -50,23 +50,27 @@
             </form>
           </div>
           <div style="height: 60px;"></div>
-          <div id="end" class="end"></div>
+          
+          <div id="end" class="end">
+            
+            <button id="start" class="btn-grad">Start Game</button>
+          </div>
         </div>
         <div class="col-6 text-center box">
-          <h2 class="head">
-            <!-- <span> <i class="fas fa-keyboard keyboard"></i> </span> -->
-            Typing Game
-            <!-- <span><i class="fas fa-trophy winner"></i></span> -->
+          <h2 class="head ">
+            Words Game
           </h2>
-          <p class="time float-right scorecard text-monospace">
-            <span><i class="far fa-clock fa-1x"></i></span> Time :
-            <Left:span id="time">10 sec</Left:span>
-          </p>
-          <p class="score float-left text-monospace">
-            <span><i class="fas fa-poll"></i></span> Score :
-            <span id="score">0</span>
-          </p>
-          <div style="height: 50px;"></div>
+          <div id="time">
+            <span id="time-bar">Time</span><br /><span id="time-count">7<span class="time-badge">sec</span>
+          </div>
+
+          <div id="score">
+            <span id="score-bar">Score </span><br /><span id="score-count"
+              >0</span
+            >
+          </div>
+
+          <div style="height: 30px;"></div>
           <h1 id="word"></h1>
           <div class="inputWithIcon">
             <input
@@ -74,132 +78,21 @@
               id="text"
               autocomplete="off"
               placeholder="Type the Word here......"
-            /><span>
-              <i class="fas fa-keyboard keyboard fa-2x fa-color"></i>
+            /><span
+              ><i class="fas fa-keyboard keyboard fa-2x fa-color"></i>
             </span>
+            <span id="tick"> </span>
           </div>
         </div>
       </div>
+      <audio id="myAudio">
+        <source src="error.mp3" type="audio/ogg" />
+      </audio>
     </div>
-
-    <script>
-      const word = document.getElementById("word");
-      const text = document.getElementById("text");
-      const score = document.getElementById("score");
-      const time = document.getElementById("time");
-      const end = document.getElementById("end");
-      const difficultySelect = document.getElementById("difficulty");
-      const settingsForm = document.getElementById("settings-form");
-      const settings = document.getElementById("settings");
-
-      const words = [
-        "sigh",
-        "tense",
-        "airplane",
-        "ball",
-        "pies",
-        "juice",
-        "warlike",
-        "bad",
-        "north",
-        "dependent",
-        "steer",
-        "silver",
-        "highfalutin",
-        "superficial",
-        "quince",
-        "eight",
-        "feeble",
-        "admit",
-        "drag",
-        "loving",
-      ];
-
-      let randomWord;
-      let initialScore = 0;
-      let initialTime = 7;
-      let difficulty =
-        localStorage.getItem("difficulty") !== null
-          ? localStorage.getItem("difficulty")
-          : "medium";
-
-      difficultySelect.value =
-        localStorage.getItem("difficulty") !== null
-          ? localStorage.getItem("difficulty")
-          : "medium";
-
-      //generate random word
-      function getRandomWord() {
-        return words[Math.floor(Math.random() * words.length)];
-      }
-      //   console.log(getRandomWord());
-
-      //Add word to DOM
-      function addWordToDom() {
-        randomWord = getRandomWord();
-        word.innerHTML = randomWord;
-      }
-      addWordToDom();
-
-      //event listener
-      text.addEventListener("input", (e) => {
-        const enteredInput = e.target.value;
-        // console.log(enteredInput);
-
-        if (enteredInput === randomWord) {
-          addWordToDom();
-
-          //clear
-          e.target.value = "";
-
-          //*****************do this at the last ,,jump to initialscore++
-
-          if (difficulty === "hard") {
-            initialTime += 2;
-          } else if (difficulty === "medium") {
-            initialTime += 5;
-          } else {
-            initialTime += 7;
-          }
-
-          updateTime();
-
-          //score updating
-          initialScore++;
-          score.innerHTML = initialScore;
-        }
-      });
-
-      //cursor to come automatically to input tag
-      text.focus();
-
-      //start counting down
-      const timeLeft = setInterval(updateTime, 1000);
-
-      function updateTime() {
-        // console.log(1);
-        initialTime--;
-        time.innerHTML = initialTime + " " + "sec";
-
-        if (initialTime === 0) {
-          clearInterval(timeLeft);
-          //game over
-          gameOver();
-        }
-      }
-
-      function gameOver() {
-        end.innerHTML = `<h1>Time's Up</h1>
-            <p>Your final score is ${initialScore}</p>
-            <button onClick="location.reload()">Play Again</button>`;
-      }
-
-      //difficulty
-
-      settingsForm.addEventListener("change", (e) => {
-        difficulty = e.target.value;
-        localStorage.setItem("difficulty", difficulty);
-      });
-    </script>
+    <script type="module" src="type.js"></script>
   </body>
 </html>
+
+
+
+
