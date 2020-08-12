@@ -13,13 +13,22 @@
     <title>Typing Speed</title>
   </head>
   <body>
+    <div></div>
     <div id="parentDiv">
-      <div class="speedTimer" id="speedTimer">60</div>
+      <div>
+        <select id="select">
+          <option value="Easy" id="easy">Easy</option>
+          <option value="Medium" id="medium">Medium</option>
+          <option value="Hard" id="hard">Hard</option>
+        </select>
+      </div>
+      <div class="speedTimer" id="speedTimer">35</div>
       <div class="textContainer">
         <div class="paraDisplay" id="paraDisplay"></div>
         <textarea id="userResponse" class="userResponse" autofocus>
         USER RESPONSE</textarea
         >
+        <div id="finalResult"></div>
         <button id="btn">Start</button>
       </div>
     </div>
