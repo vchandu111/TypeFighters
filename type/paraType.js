@@ -1,21 +1,24 @@
-const randomTexts = "http://api.quotable.io/random";
+const randomTexts = "https://api.chucknorris.io/jokes/random";
 const textDisplay = document.getElementById("paraDisplay");
 const userInput = document.getElementById("userResponse");
 let clock = document.getElementById("speedTimer");
 
 let totalTyped;
 let time;
+let initial_time = 35;
 let level = document.getElementById("select");
 
 const selectchange = () => {
-  console.log(event.target.value);
+  // console.log(event.target.value);
   if (event.target.value == "Medium") {
     time = 20;
     clock.textContent = time;
+    initial_time = 20;
     return time;
   } else if (event.target.value == "Hard") {
-    time = 2;
+    time = 15;
     clock.textContent = time;
+    initial_time = 15;
     return time;
   } else {
     time = 35;
@@ -25,11 +28,11 @@ const selectchange = () => {
 };
 
 level.addEventListener("change", selectchange);
-let userSpeed = (totalwords, time) => {
-  console.log(totalwords, time);
+let userSpeed = (totalwords, initial_time) => {
+  console.log(totalwords, initial_time);
   let final = document.getElementById("finalResult");
   final.textContent = "";
-  let speed = Math.floor(totalwords + 1 / time);
+  let speed = Math.floor(totalwords / 5 / (initial_time / 60));
 
   final.innerHTML = ` ${speed}<br>WPM `;
   final.style.fontSize = "18px";
@@ -39,7 +42,7 @@ let userSpeed = (totalwords, time) => {
 const getrandomText = () => {
   return fetch(randomTexts)
     .then((response) => response.json())
-    .then((texts) => texts.content);
+    .then((texts) => texts.value);
 };
 
 userInput.addEventListener("input", () => {
@@ -67,22 +70,22 @@ userInput.addEventListener("input", () => {
     totalTyped = userInput.value;
 
     const wordCount = (totalTyped) => {
-      let woRds = totalTyped.split(" ").length;
+      let woRds = totalTyped.split("").length;
       return woRds;
     };
 
     let totalwords = wordCount(totalTyped);
 
-    userSpeed(totalwords, time);
+    userSpeed(totalwords, initial_time);
     renderTexts();
   }
 });
 
 let timeLeft;
-console.log(time);
+//console.log(time);
 time = Number(clock.textContent);
 updateTime = () => {
-  console.log(time);
+  //console.log(time);
   clock.textContent = time;
   time--;
   if (time == -1) {
@@ -96,9 +99,9 @@ updateTime = () => {
   }
 
   if (time < 5) clock.style.color = "red";
-  console.log(time);
+  //console.log(time);
 
-  console.log(clock.textContent);
+  //console.log(clock.textContent);
 
   //console.log(typeof time);
 };
