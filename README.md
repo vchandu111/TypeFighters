@@ -1,4 +1,6 @@
 # TypeFighters
+We designed and made a combination of Typing and Word Beater game where Users can check their typing speed and accuracy.
+
 
 ## Built With
 
@@ -6,6 +8,47 @@
 - Font awesome.
 - Bootstrap
 - Javascript(ES6)
+
+## Typing Game
+<img width="946" alt="typing" src="https://user-images.githubusercontent.com/63995316/90113527-1c0ddb80-dd6f-11ea-9778-5506f609d532.png">
+
+Instructions
+<ul>
+                  <li>You need to write the sentences in the text area.</li>
+                    <li>You will have three levels in this game <br>
+                  <span class="levelStyle" >Easy : </span> Time span is 35 seconds<br>
+                  <span class="levelStyle">Medium : </span> Time span is 20 seconds<br>
+                  <span class="levelStyle">Hard : </span>Time span is 15 seconds
+                  </li>
+                  <li>To get next sentence you need to type the current sentence correctly without error.
+                  </li>
+                  <li>You will be provided speed for every particular right sentence that you finish typing.
+                  </li>
+                </ul>
+
+# Word Typing
+
+<img width="947" alt="word" src="https://user-images.githubusercontent.com/63995316/90112553-c71d9580-dd6d-11ea-8ed9-7a0b64885629.png">
+Instructions
+
+ <ul>
+                    <li>You will have 7 sec as initial time and it will get updated
+                      based on game levels<br>
+                  <span class="levelStyle" >Easy : </span> Increases time by 5 secs on typing
+                  the word correctly<br>
+                  <span class="levelStyle">Medium : </span> Increases time by 3 secs on typing
+                  the word correctly<br>
+                  <span class="levelStyle">Hard : </span> Increases time by 2 secs on typing
+                  the word correctly
+                  </li>
+                  <li>You will lose 1 point for every word you type
+                      wrong.</li>
+                  <li>Your Final Score and Accuracy will be calculated based
+                      on right and wrong responses</li>
+                </ul>
+             
+
+
 
 ## Getting Started
 
