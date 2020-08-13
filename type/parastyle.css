@@ -1,58 +1,58 @@
 * {
-  box-sizing: border-box;
+  background-color: #152c2c;
 }
 
-#parentDiv {
-  display: flex;
-
-  justify-content: center;
-  background-color: darkgray;
+#top {
+  height: 80px;
   width: 100%;
-  height: 800px;
+  background-color: #244646;
 }
 
-#parentDiv .userResponse {
-  background-color: whitesmoke;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-.paraDisplay {
-  padding: 1%;
-  margin-bottom: 5%;
-  margin-left: 3%;
-  font-size: 1rem;
-}
-
-.userResponse {
-  outline: teal;
-  width: 400px;
-
-  height: 300px;
-  padding: 0.5%;
-  border: 3px solid white;
-}
-
-.userResponse:focus {
-  border-color: black;
-}
-.textContainer {
-  background-color: lightgrey;
-  color: white;
-  padding: 10%;
-  width: 500px;
-  max-width: 90%;
-  border-radius: 1%;
-}
-
-.speedTimer {
-  position: fixed;
-  top: 3rem;
-  font-size: 45px;
-  color: teal;
+#select {
+  background-color: teal;
+  margin-top: 25px;
+  margin-left: 600px;
+  padding: 3px 10px;
+  color: whitesmoke;
   font-weight: bold;
 }
-
+#finalResult {
+  height: 70px;
+  width: 70px;
+  background-color: #244646;
+  color: white;
+  text-align: center;
+  margin-left: 300px;
+  float: left;
+  margin-top: 50px;
+}
+.speedTimer {
+  height: 70px;
+  width: 70px;
+  background-color: #244646;
+  color: white;
+  text-align: center;
+  margin-right: 250px;
+  float: right;
+  font-size: 30px;
+}
+textarea {
+  height: 100px;
+  width: 400px;
+  margin-left: 450px;
+  margin-top: 100px;
+  background-color: teal;
+  color: white;
+}
+button {
+  margin-left: 620px;
+  padding: 5px 10px;
+  color: white;
+}
+.paraDisplay {
+  color: whitesmoke;
+  text-align: center;
+}
 .correct {
   color: rgb(12, 129, 12);
 }
@@ -61,4 +61,45 @@
   color: rgb(185, 14, 14);
   text-decoration: underline;
   font-weight: bold;
+}
+
+#playAgain {
+  text-align: center;
+  margin-top: 20px;
+  width: 130px;
+  border-radius: 5px;
+  margin-right: 1200px;
+}
+#timeUp {
+  text-align: justify;
+}
+.head {
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px white;
+  color: teal;
+  font-weight: bolder;
+  font-size: 45px;
+  margin-left: 550px;
+  padding-top: 10px;
+}
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #136a8a 0%,
+    #267871 51%,
+    #136a8a 100%
+  );
+}
+.timer-badge {
+  color: white;
+  text-align: center;
+  margin-right: 250px;
+  float: right;
+  margin-top: 35px;
+  font-size: 15px;
+}
+.fa-color {
+  color: teal;
+  margin-left: 180px;
+  margin-top: 20px;
 }
