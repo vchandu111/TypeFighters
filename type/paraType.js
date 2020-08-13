@@ -91,6 +91,7 @@ updateTime = () => {
     clearInterval(timeLeft);
     userInput.style.display = "none";
     let timeUp = document.getElementById("timeUp");
+    let elem = document.createElement("button");
     timeUp.innerHTML = `<button id="playAgain" class="btn-grad" onClick="location.reload()">Play Again</button>`;
   }
 
