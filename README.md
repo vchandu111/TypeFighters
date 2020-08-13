@@ -32,14 +32,11 @@ Instructions
 Instructions
 
  <ul>
-                    <li>You will have 7 sec as initial time and it will get updated
-                      based on game levels<br>
-                  <span class="levelStyle" >Easy : </span> Increases time by 5 secs on typing
-                  the word correctly<br>
-                  <span class="levelStyle">Medium : </span> Increases time by 3 secs on typing
-                  the word correctly<br>
-                  <span class="levelStyle">Hard : </span> Increases time by 2 secs on typing
-                  the word correctly
+                    <li>You will have 3 levels 
+                     <br>
+                  <span class="levelStyle" >Easy : </span> Time span is 7 seconds<br>
+                  <span class="levelStyle">Medium : </span> Time span is 5 seconds<br>
+                  <span class="levelStyle">Hard : </span> Time span is 3 seconds
                   </li>
                   <li>You will lose 1 point for every word you type
                       wrong.</li>
