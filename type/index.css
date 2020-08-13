@@ -1,0 +1,37 @@
+li {
+  font-family: sans-serif;
+  line-height: 30px;
+}
+.levelStyle {
+  color: teal;
+  font-weight: bold;
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #7474bf 0%,
+    #348ac7 51%,
+    #7474bf 100%
+  );
+}
+.btn-grad:hover {
+  background-image: linear-gradient(
+    to right,
+    #fc354c 0%,
+    #fc354c 51%,
+    #0abfbc 100%
+  );
+}
+
+.title {
+  text-align: center;
+  font-size: 35px;
+  color: teal;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.card-title {
+  font-size: 25px;
+  color: #7474bf;
+}
