@@ -1,5 +1,5 @@
 * {
-  background-color: #152c2c;
+  background-color: #244646;
 }
 
 #top {
@@ -8,18 +8,31 @@
   background-color: #244646;
 }
 
+#border {
+  border-style: solid;
+  border-color: #152c2c;
+  border-width: 40px 40px 0px 40px;
+}
 #select {
   background-color: teal;
   margin-top: 25px;
-  margin-left: 600px;
+  /* margin-left: 600px; */
   padding: 3px 10px;
   color: whitesmoke;
   font-weight: bold;
 }
+
+.difficulty {
+  background-color: #244646;
+  color: white;
+  font-family: monospace;
+  margin-left: 500px;
+  font-size: 18px;
+}
 #finalResult {
   height: 70px;
   width: 70px;
-  background-color: #244646;
+  background-color: #152c2c;
   color: white;
   text-align: center;
   margin-left: 300px;
@@ -29,8 +42,8 @@
 .speedTimer {
   height: 70px;
   width: 70px;
-  background-color: #244646;
-  color: white;
+  background-color: #152c2c;
+  color: wheat;
   text-align: center;
   margin-right: 250px;
   float: right;
@@ -39,16 +52,36 @@
 textarea {
   height: 100px;
   width: 400px;
-  margin-left: 450px;
+  margin-left: 400px;
   margin-top: 30px;
   background-color: teal;
   color: white;
+  border-radius: 20px;
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
 }
-button {
-  margin-left: 620px;
+
+#btn {
+  padding: 5px 10px;
+  width: 150px;
+  margin-left: 520px;
   padding: 5px 10px;
   color: white;
+  padding: 5px 10px;
+  width: 150px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 80px;
 }
+button {
+  margin-left: 570px;
+  color: white;
+  width: 100px;
+  border: none;
+}
+
 .paraDisplay {
   max-width: 400px;
   margin-left: 430px;
@@ -81,7 +114,8 @@ button {
   color: teal;
   font-weight: bolder;
   font-size: 45px;
-  margin-left: 550px;
+  margin-left: 180px;
+  margin-top: 20px;
   padding-top: 10px;
 }
 .btn-grad {
@@ -93,7 +127,7 @@ button {
   );
 }
 .timer-badge {
-  color: white;
+  color: gray;
   text-align: center;
   margin-right: 250px;
   float: right;
@@ -104,4 +138,20 @@ button {
   color: teal;
   margin-left: 180px;
   margin-top: 20px;
+}
+
+#typing-head {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  border-radius: 4px;
+  margin: auto;
+  width: 580px;
+  height: 80px;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 280px;
+  padding-bottom: 8px;
+}
+#allign {
+  margin-left: 50px;
 }

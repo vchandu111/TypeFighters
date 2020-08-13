@@ -31,8 +31,8 @@ let userSpeed = (totalwords, time) => {
   final.textContent = "";
   let speed = Math.floor(totalwords + 1 / time);
 
-  final.textContent = ` ${speed} `;
-  final.style.fontSize = "30px";
+  final.innerHTML = ` ${speed}<br>WPM `;
+  final.style.fontSize = "18px";
   final.style.color = "greenyellow";
 };
 

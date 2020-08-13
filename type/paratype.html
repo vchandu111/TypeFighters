@@ -23,47 +23,61 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-    <script src="https://kit.fontawesome.com/683b4b40e3.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/683b4b40e3.js"
+      crossorigin="anonymous"
+    ></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="parastyle.css">
+    <link rel="stylesheet" href="parastyle.css" />
   </head>
 
   <body>
-    <div id="top">
-      <select id="select">
-        <option value="Easy" id="easy">Easy</option>
-        <option value="Medium" id="medium">Medium</option>
-        <option value="Hard" id="hard">Hard</option>
-      </select>
-    </div>
-    <div>
-    <h2 class="head">
-      Typing Game
-    </h2>
-    <div class="container-fluid">
-      <div class="row mb-4">
-        <div class="col">
-          <div id="finalResult">WPM</div>
-        </div>
-        <div class="col">
-            <span class="timer-badge">Time(sec)</span>
-          <div class="speedTimer" id="speedTimer">
-            35
+    <div id="border">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div id="top">
+              <span class="difficulty">Select Difficulty</span>
+              <select id="select">
+                <option value="Easy" id="easy">Easy</option>
+                <option value="Medium" id="medium">Medium</option>
+                <option value="Hard" id="hard">Hard</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-9">
+            <h2 class="head" id="typing-head">
+              Typing Game
+            </h2>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="textContainer">
-            <div class="paraDisplay" id="paraDisplay"></div>
-            <textarea id="userResponse" class="userResponse" autofocus>
-                        Type the sentence here....</textarea
-            >
-            <div id="timeUp"></div>
+
+      <div class="container-fluid">
+        <div class="row mb-4">
+          <div class="col">
+            <div id="finalResult">WPM</div>
           </div>
-          <button id="btn"  class="btn-grad">Start</button>
+          <div class="col">
+            <span class="timer-badge">Time(sec)</span>
+            <div class="speedTimer" id="speedTimer">
+              35
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="textContainer">
+              <div class="paraDisplay" id="paraDisplay"></div>
+              <textarea id="userResponse" class="userResponse" autofocus>
+                        Type the sentence here....</textarea
+              >
+              <div id="timeUp"></div>
+            </div>
+            <button id="btn" class="btn-grad">Start</button>
+          </div>
         </div>
       </div>
     </div>
